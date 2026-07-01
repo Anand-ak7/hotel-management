@@ -56,8 +56,8 @@ export function BookingsPage() {
             Review guest stays and complete checkout.
           </p>
         </div>
-        <Link to="/checkin">
-          <Button>
+        <Link to="/checkin" className="w-full sm:w-auto">
+          <Button className="w-full sm:w-auto">
             <FiLogIn /> Add Booking
           </Button>
         </Link>
@@ -76,7 +76,7 @@ export function BookingsPage() {
         <>
           <div className="grid gap-4 md:hidden">
             {filtered.map((booking) => (
-              <article key={booking.id} className="panel overflow-hidden p-4">
+              <article key={booking.id} className="panel overflow-hidden p-3 sm:p-4">
                 <div className="mb-4 flex items-start justify-between gap-3">
                   <div className="min-w-0">
                     <p className="truncate text-lg font-extrabold text-royal-ink">
@@ -86,7 +86,7 @@ export function BookingsPage() {
                   </div>
                   <StatusChip status={booking.status} />
                 </div>
-                <div className="grid grid-cols-2 gap-3 rounded-xl bg-royal-pearl p-3 text-sm">
+                <div className="grid grid-cols-1 gap-3 rounded-xl bg-royal-pearl p-3 text-sm min-[380px]:grid-cols-2">
                   <div>
                     <p className="text-xs font-bold uppercase tracking-wide text-slate-500">
                       Room

@@ -40,11 +40,11 @@ export function DataTable<T>({
     <div className="panel overflow-hidden">
       <div className="h-1 bg-gradient-to-r from-royal-gold via-primary to-emerald-500" />
       <div className="overflow-x-auto">
-        <table className="w-full min-w-[720px] text-left text-sm">
+        <table className="w-full min-w-[640px] text-left text-sm">
           <thead className="sticky top-0 bg-royal-champagne text-xs uppercase tracking-wide text-slate-600">
             <tr>
               {columns.map((column) => (
-                <th key={column.key} className="px-4 py-3">
+                <th key={column.key} className="px-3 py-3 sm:px-4">
                   <button
                     className="inline-flex items-center gap-1 font-extrabold"
                     disabled={!column.sortable}
@@ -77,7 +77,7 @@ export function DataTable<T>({
                 className="transition hover:bg-royal-champagne/50"
               >
                 {columns.map((column) => (
-                  <td key={column.key} className="px-4 py-3.5 align-middle">
+                  <td key={column.key} className="px-3 py-3.5 align-middle sm:px-4">
                     {column.render(row)}
                   </td>
                 ))}

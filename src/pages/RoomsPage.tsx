@@ -135,7 +135,7 @@ export function RoomsPage() {
             Manage inventory, pricing, and status.
           </p>
         </div>
-        <Button onClick={startCreate}>
+        <Button className="w-full sm:w-auto" onClick={startCreate}>
           <FiPlus /> Add Room
         </Button>
       </div>
@@ -163,7 +163,7 @@ export function RoomsPage() {
                       : "border-app-border bg-white text-slate-600 hover:border-royal-gold/50 hover:bg-royal-champagne hover:text-royal-ink",
                   )}
                 >
-                  <span>{label}</span>
+                  <span className="whitespace-nowrap">{label}</span>
                   <span
                     className={cx(
                       "rounded-full px-2 py-0.5 text-xs",
@@ -220,7 +220,7 @@ export function RoomsPage() {
               <div key={room.id} className="panel overflow-hidden">
                 <div className="h-1 bg-gradient-to-r from-royal-gold via-primary to-emerald-500" />
                 <div className="p-4">
-                  <div className="flex items-start justify-between">
+                <div className="flex items-start justify-between gap-3">
                     <div>
                       <p className="text-lg font-extrabold">
                         Room {room.roomNumber}
@@ -237,7 +237,7 @@ export function RoomsPage() {
                       {money(room.price)}
                     </p>
                   </div>
-                  <div className="mt-4 flex gap-2">
+                <div className="mt-4 flex flex-wrap gap-2">
                     <Link to={"/rooms/" + room.id + "/assets"}>
                       <IconButton label="View assets">
                         <FiEye />
@@ -374,7 +374,7 @@ export function RoomsPage() {
               ]}
             />
           </Field>
-          <div className="sm:col-span-2 flex justify-end gap-3">
+          <div className="grid gap-3 sm:col-span-2 sm:flex sm:justify-end">
             <Button
               variant="secondary"
               type="button"

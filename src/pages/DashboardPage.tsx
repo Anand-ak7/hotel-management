@@ -58,24 +58,24 @@ export function DashboardPage() {
   return (
     <div className="space-y-6">
       <div className="panel overflow-hidden">
-        <div className="relative grid gap-6 overflow-hidden bg-gradient-to-br from-royal-navy via-royal-ink to-slate-950 p-5 text-white sm:p-6 lg:grid-cols-[1fr_360px] lg:items-center">
+        <div className="relative grid gap-5 overflow-hidden bg-gradient-to-br from-royal-navy via-royal-ink to-slate-950 p-4 text-white sm:p-6 lg:grid-cols-[1fr_360px] lg:items-center">
           <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-royal-gold/10 blur-2xl" />
           <div className="absolute -bottom-20 left-1/3 h-60 w-60 rounded-full bg-primary/15 blur-2xl" />
           <div className="relative">
-            <h2 className="mt-2 text-3xl font-extrabold leading-tight sm:text-4xl">
+            <h2 className="mt-2 text-2xl font-extrabold leading-tight sm:text-4xl">
               Hotel Dashboard
             </h2>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-300">
               Room availability, booking movement, and service readiness at a
               glance.
             </p>
-            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-              <Link to="/checkin">
+            <div className="mt-5 grid gap-3 sm:flex sm:flex-row">
+              <Link to="/checkin" className="w-full sm:w-auto">
                 <Button className="w-full bg-white text-royal-navy hover:bg-royal-champagne sm:w-auto">
                   <FiLogIn /> New Check-In
                 </Button>
               </Link>
-              <Link to="/rooms">
+              <Link to="/rooms" className="w-full sm:w-auto">
                 <Button
                   variant="secondary"
                   className="w-full !border-white/15 !bg-white/10 !text-white hover:!bg-white/15 sm:w-auto"
@@ -85,13 +85,13 @@ export function DashboardPage() {
               </Link>
             </div>
           </div>
-          <div className="relative rounded-xl border border-white/10 bg-white/10 p-4 text-sm font-semibold text-amber-50/90 shadow-royal backdrop-blur">
+          <div className="relative rounded-xl border border-white/10 bg-white/10 p-3 text-sm font-semibold text-amber-50/90 shadow-royal backdrop-blur sm:p-4">
             <div className="flex items-center justify-between gap-3">
               <div>
                 <p className="text-xs uppercase tracking-wide text-amber-100/70">
                   Occupancy
                 </p>
-                <p className="mt-1 text-4xl font-extrabold">{occupancyRate}%</p>
+              <p className="mt-1 text-3xl font-extrabold sm:text-4xl">{occupancyRate}%</p>
               </div>
               <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/10 text-royal-gold">
                 <FiTrendingUp size={24} />
@@ -111,7 +111,7 @@ export function DashboardPage() {
           </div>
         </div>
       </div>
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-4">
         <StatCard label="Total Rooms" value={stats.total} icon={FiHome} />
         <StatCard
           label="Available Rooms"
@@ -132,7 +132,7 @@ export function DashboardPage() {
           tone="warning"
         />
       </div>
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-3 sm:gap-4 md:grid-cols-2">
         <StatCard
           label="Today's Check-ins"
           value={stats.checkins}

@@ -16,7 +16,7 @@ export function Button({
   return (
     <button
       className={cx(
-        "inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold transition duration-200 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60",
+        "inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-3.5 py-2.5 text-sm font-bold transition duration-200 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60 sm:px-4",
         variant === "primary" &&
           "bg-gradient-to-r from-royal-navy to-primary text-white shadow-soft hover:-translate-y-0.5 hover:shadow-royal",
         variant === "secondary" &&
@@ -196,7 +196,7 @@ export function CustomSelect({
           setOpen((current) => !current);
         }}
         className={cx(
-          "focus-ring flex min-h-12 w-full items-center justify-between gap-3 rounded-2xl border border-app-border bg-white/95 px-4 py-2.5 text-left shadow-sm transition hover:border-royal-gold/50 hover:bg-white disabled:cursor-not-allowed disabled:bg-slate-100",
+          "focus-ring flex min-h-12 w-full items-center justify-between gap-3 rounded-2xl border border-app-border bg-white/95 px-3.5 py-2.5 text-left shadow-sm transition hover:border-royal-gold/50 hover:bg-white disabled:cursor-not-allowed disabled:bg-slate-100 sm:px-4",
           open && "border-royal-gold ring-2 ring-royal-gold/20",
         )}
       >
@@ -232,10 +232,10 @@ export function CustomSelect({
             ref={menuRef}
             className="fixed z-[9999] max-h-72 overflow-auto rounded-2xl border border-app-border bg-white p-2 shadow-royal"
             style={{
-              left: menuRect.left,
-              top: menuRect.bottom + 8,
-              width: menuRect.width,
-              maxWidth: "calc(100vw - 1rem)",
+            left: Math.min(menuRect.left, window.innerWidth - Math.min(menuRect.width, window.innerWidth - 16) - 8),
+            top: menuRect.bottom + 8,
+            width: Math.min(menuRect.width, window.innerWidth - 16),
+            maxWidth: "calc(100vw - 1rem)",
             }}
           >
             {options.map((option) => {
@@ -299,7 +299,7 @@ export function SearchBar({
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
-        className="h-12 rounded-2xl pl-14 pr-11 text-base shadow-soft"
+        className="h-12 rounded-2xl pl-14 pr-11 text-sm shadow-soft sm:text-base"
       />
       {value && (
         <button
@@ -425,11 +425,11 @@ export function Modal({
 }) {
   if (!open) return null;
   return (
-    <div className="fixed inset-0 z-40 flex items-center justify-center bg-slate-950/50 p-4 backdrop-blur-sm">
-      <div className="w-full max-w-xl overflow-hidden rounded-xl border border-app-border bg-white shadow-royal">
+    <div className="fixed inset-0 z-40 flex items-center justify-center bg-slate-950/50 p-3 backdrop-blur-sm sm:p-4">
+      <div className="max-h-[calc(100vh-1.5rem)] w-full max-w-xl overflow-hidden rounded-xl border border-app-border bg-white shadow-royal sm:max-h-[calc(100vh-2rem)]">
         <div className="h-1 bg-gradient-to-r from-royal-gold via-primary to-emerald-500" />
-        <div className="p-5">
-          <div className="mb-4 flex items-center justify-between">
+        <div className="max-h-[calc(100vh-1.75rem)] overflow-y-auto p-4 sm:max-h-[calc(100vh-2.25rem)] sm:p-5">
+          <div className="mb-4 flex items-center justify-between gap-3">
             <h2 className="text-lg font-extrabold text-royal-ink">{title}</h2>
             <Button variant="ghost" onClick={onClose}>
               Close
@@ -459,7 +459,7 @@ export function ConfirmDialog({
   return (
     <Modal title={title} open={open} onClose={onCancel}>
       <p className="text-sm text-slate-600">{message}</p>
-      <div className="mt-5 flex justify-end gap-3">
+      <div className="mt-5 grid gap-3 sm:flex sm:justify-end">
         <Button variant="secondary" onClick={onCancel}>
           Cancel
         </Button>

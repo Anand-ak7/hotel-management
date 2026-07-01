@@ -33,12 +33,12 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
   return (
     <ToastContext.Provider value={value}>
       {children}
-      <div className="fixed right-4 top-4 z-50 flex w-[calc(100%-2rem)] max-w-sm flex-col gap-3">
+      <div className="fixed inset-x-3 top-3 z-50 flex flex-col gap-3 sm:inset-x-auto sm:right-4 sm:top-4 sm:w-[calc(100%-2rem)] sm:max-w-sm">
         {toasts.map((toast) => (
           <div
             key={toast.id}
             className={cx(
-              "flex items-start gap-3 rounded-xl border bg-white p-4 shadow-soft",
+              "flex items-start gap-3 rounded-xl border bg-white p-3 shadow-soft sm:p-4",
               toast.type === "success" && "border-success/20",
               toast.type === "error" && "border-danger/20",
               toast.type === "warning" && "border-warning/20",

@@ -82,7 +82,7 @@ export function CheckinPage() {
   return (
     <div className="mx-auto max-w-6xl space-y-5">
       <div className="panel overflow-hidden">
-        <div className="grid gap-5 bg-gradient-to-br from-royal-navy via-royal-ink to-slate-950 p-5 text-white sm:p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="grid gap-5 bg-gradient-to-br from-royal-navy via-royal-ink to-slate-950 p-4 text-white sm:p-6 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-royal-gold">
               Guest arrival
@@ -113,7 +113,7 @@ export function CheckinPage() {
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-royal-gold shadow-sm">
                 <FiUser />
               </div>
-              <div>
+              <div className="min-w-0">
                 <h3 className="font-extrabold text-royal-ink">Guest Details</h3>
                 <p className="text-xs font-semibold text-slate-500">
                   Basic identity and contact information
@@ -160,7 +160,7 @@ export function CheckinPage() {
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-primary shadow-sm">
                 <FiCalendar />
               </div>
-              <div>
+              <div className="min-w-0">
                 <h3 className="font-extrabold text-royal-ink">Stay Details</h3>
                 <p className="text-xs font-semibold text-slate-500">
                   Room assignment and expected stay period
@@ -209,7 +209,7 @@ export function CheckinPage() {
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-success shadow-sm">
                 <FiCreditCard />
               </div>
-              <div>
+              <div className="min-w-0">
                 <h3 className="font-extrabold text-royal-ink">Payment</h3>
                 <p className="text-xs font-semibold text-slate-500">
                   Advance and total booking amount
@@ -260,7 +260,7 @@ export function CheckinPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 rounded-xl bg-royal-pearl p-3 text-sm">
+            <div className="grid grid-cols-1 gap-3 rounded-xl bg-royal-pearl p-3 text-sm min-[380px]:grid-cols-2">
               <div>
                 <p className="text-xs font-bold uppercase tracking-wide text-slate-500">
                   Rate

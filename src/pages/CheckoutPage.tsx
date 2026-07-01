@@ -108,7 +108,7 @@ export function CheckoutPage() {
   return (
     <div className="mx-auto max-w-6xl space-y-5">
       <div className="panel overflow-hidden">
-        <div className="grid gap-5 bg-gradient-to-br from-royal-navy via-royal-ink to-slate-950 p-5 text-white sm:p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="grid gap-5 bg-gradient-to-br from-royal-navy via-royal-ink to-slate-950 p-4 text-white sm:p-6 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-royal-gold">
               Departure verification
@@ -121,7 +121,7 @@ export function CheckoutPage() {
               returns to service or moves to maintenance.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-3 rounded-xl border border-white/10 bg-white/10 p-4 text-sm font-semibold text-amber-50/90 backdrop-blur sm:min-w-72">
+          <div className="grid grid-cols-2 gap-3 rounded-xl border border-white/10 bg-white/10 p-3 text-sm font-semibold text-amber-50/90 backdrop-blur sm:min-w-72 sm:p-4">
             <div>
               <p className="text-xs uppercase tracking-wide text-amber-100/70">
                 Active stays
@@ -168,7 +168,7 @@ export function CheckoutPage() {
       ) : (
         <div className="grid gap-5 xl:grid-cols-[1fr_340px]">
           <div className="space-y-4">
-            <section className="panel grid gap-4 p-4 sm:grid-cols-2 lg:grid-cols-4 lg:p-5">
+            <section className="panel grid gap-3 p-3 sm:grid-cols-2 sm:gap-4 sm:p-4 lg:grid-cols-4 lg:p-5">
               <div className="rounded-xl bg-royal-pearl p-3">
                 <p className="text-xs font-bold uppercase tracking-wide text-slate-500">
                   Guest
@@ -241,7 +241,7 @@ export function CheckoutPage() {
                         assetOk ? "bg-success" : "bg-warning",
                       )}
                     />
-                    <div className="grid gap-4 p-4 lg:grid-cols-[1fr_160px_150px_140px] lg:items-start">
+                    <div className="grid gap-4 p-3 sm:p-4 lg:grid-cols-[1fr_160px_150px_140px] lg:items-start">
                       <div className="min-w-0">
                         <div className="flex items-start gap-3">
                           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-royal-pearl text-royal-gold">
@@ -333,7 +333,7 @@ export function CheckoutPage() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 rounded-xl bg-royal-pearl p-3 text-sm">
+              <div className="grid grid-cols-1 gap-3 rounded-xl bg-royal-pearl p-3 text-sm min-[380px]:grid-cols-2">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wide text-slate-500">
                     Verified
